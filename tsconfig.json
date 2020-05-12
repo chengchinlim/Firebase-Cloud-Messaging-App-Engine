@@ -2,7 +2,9 @@
   "compilerOptions": {
       "outDir": "lib",
       "allowJs": true,
-      "target": "es2017"
+      "target": "es2017",
+      "module": "commonjs",
+      "allowSyntheticDefaultImports": true
   },
   "compileOnSave": true,
   "include": [
