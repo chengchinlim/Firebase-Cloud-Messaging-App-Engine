@@ -15,9 +15,12 @@
     "test": "mocha --exit test/*.test.js"
   },
   "dependencies": {
+    "@google-cloud/logging-bunyan": "^2.0.3",
     "@types/node": "^13.13.5",
     "axios": "^0.19.2",
+    "bunyan": "^1.8.12",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.16.3"
   },
   "devDependencies": {
