@@ -1,20 +1,20 @@
 const express = require('express')
-const axios = require('axios')
+// const axios = require('axios')
 const cors = require('cors')
 // const dotenv = require('dotenv')
-const bunyan = require('bunyan')
-const lb = require('@google-cloud/logging-bunyan')
+// const bunyan = require('bunyan')
+// const lb = require('@google-cloud/logging-bunyan')
 
 export const GOOGLE_APPLICATION_CREDENTIALS='/Users/chengchinlim/BackendProjects/firebase-cloud-messaging-service-account-key.json'
 
 const startServer = async () => {
-    const { logger, mw } = await lb.express.middleware()
+    // const { logger, mw } = await lb.express.middleware()
 
     const app = express();
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }))
     app.use(cors({ origin: true }))
-    app.use(mw)
+    // app.use(mw)
 
 // const loggingBunyan = new lb.LoggingBunyan()
 
@@ -34,18 +34,19 @@ const startServer = async () => {
         //     solution: 'should be ok'
         //   } 
         // }, 'Testing info logging')
-        req.log.error({
-          labels: {
-            issue: 'ooops',
-            solution: 'should be ok'
-          }
-        }, 'Error message')
-        res.status(200).send('Blocked!').end()
+        res.write('First response\n')
+        res.write('Waiting\n')
+        setTimeout(() => {
+            res.write('Second response\n')
+            res.end()
+        }, 1000)
         return 
       }
       next()
     },(req, res) => {
-        logger.error('Testing error logging')
+        // logger.error('Testing error logging')
+
+
         res.status(200).send('Hello from GCP app engine Cloud Messaging!').end()
     });
 
