@@ -2,4 +2,4 @@ runtime: nodejs10
 
 instance_class: F1
 
-service: test
+service: dev
