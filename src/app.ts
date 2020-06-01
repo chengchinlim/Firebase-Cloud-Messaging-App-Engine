@@ -1,6 +1,7 @@
 const express = require('express')
 const axios = require('axios')
 const cors = require('cors')
+require('custom-env').env('test')
 
 // export const GOOGLE_APPLICATION_CREDENTIALS='/Users/chengchinlim/BackendProjects/firebase-cloud-messaging-service-account-key.json'
 
@@ -26,6 +27,7 @@ const startServer = async () => {
       }
       next()
     },(req, res) => {
+        console.log(`Stripe test key: ${process.env.STRIPE_TEST_KEY}`)
         res.status(200).send('Hello from GCP app engine Cloud Messaging!').end()
     });
 
