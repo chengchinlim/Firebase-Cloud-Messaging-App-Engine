@@ -13,3 +13,9 @@ node_modules/
 
 # gcloud components
 .gcloudignore
+
+# config files
+*.yaml
+
+# tools
+*.zsh
