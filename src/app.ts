@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors({ origin: true }))
 
-app.get('/micro2',(req, res) => {
+app.get('/',(req, res) => {
     console.log(`Stripe live key: ${process.env.STRIPE_TEST_KEY}`)
     res.status(200).send('Hello from GCP app engine Cloud Messaging! (Dev)').end()
 });

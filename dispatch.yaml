@@ -1,5 +1,5 @@
 dispatch:
-  - url: "cloudmessaging-5227.uc.r.appspot.com/"
+  - url: "cloudmessaging-5227.uc.r.appspot.com/prod/"
     service: default
 
   - url: "*/micro1/*"
